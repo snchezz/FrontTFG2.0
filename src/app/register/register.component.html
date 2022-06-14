@@ -3,8 +3,8 @@
 
   <app-nav></app-nav>
 
-  <div class="offset-sm-3 col-md-6">
-    <br><br><br><br><br><br><br><br><br>
+  <div class="offset-sm-4 col-md-4">
+    <br><br><br><br><br><br>
     <h3>Registra a un alumno!</h3>
 
     <!--Formulario de Registro-->
@@ -23,6 +23,7 @@
           </div>
         </div>
       </div>
+      
       <!--Campo de Email-->
       <div class="form-group">
         <label for="email">Email</label>
@@ -35,6 +36,7 @@
           </div>
         </div>
       </div>
+ 
       <!--Campo de Contraseña-->
       <div class="form-group">
         <label for="password">Contraseña</label>
@@ -47,15 +49,18 @@
           </div>
         </div>
       </div>
+
       <!--Boton de Registrarse-->
       <div class="form-group">
         <button class="btn btn-primary btn-block">Registrar</button>
       </div>
+
       <!--Fallo de Registro-->
       <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
         Signup failed!<br />{{ errorMessage }}
       </div>
     </form>
+
     <!--Registro Correcto-->
     <div class="alert alert-success" *ngIf="isSuccessful">
       Se ha registrado correctamente!
@@ -67,7 +72,6 @@
     <br><br><br><br><br><br>
     
   </div>
-
-
+  
   <app-footer></app-footer>
 </body>

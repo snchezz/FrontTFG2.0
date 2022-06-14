@@ -1,8 +1,9 @@
 <body>
 
   <app-nav></app-nav>
+  <br>
 
-  <div class="col-md-8">
+  <div class="offset-md-4  col-md-4">
     <div class="input-group mb-3">
       <!--Buscar por Titulo-->
       <input type="text" class="form-control" placeholder="Buscar por título" [(ngModel)]="titulo" />
@@ -14,17 +15,18 @@
     </div>
   </div>
 
-  <br><br>
+  <br>
 
-  <div *ngFor="let tutorial of tutoriales">
-    <h2>
+  <div *ngFor="let tutorial of tutoriales" class="offset-md-4  col-md-4">
+    <h2 class="text-center">
       {{ tutorial.titulo }}
     </h2>
-    <h2>
+    <p>
       {{ tutorial.descripcion }}
-    </h2>
+    </p>
 
     <img src="{{tutorial.imagen}}" alt="">
+    <hr>
     <br>
   </div>
 
