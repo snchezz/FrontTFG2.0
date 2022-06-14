@@ -1,0 +1,49 @@
+#erasmus {
+    width: 500px;
+}
+
+#presentacion {
+    font-size: x-large;
+    text-align: justify;
+    color: #fff;
+}
+
+h3 {
+    color: #fff;
+    font-size: xx-large;
+}
+
+#meeting {
+    width: 150px;
+}
+
+.imagenes {
+    padding: 1px;
+    width: 450px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all ease-in-out .3s;
+}
+
+.imagenes:hover {
+    transform: scale(1.05);
+}
+
+body {
+    background-image: url("../../assets/Fondo.png");
+    background-repeat: repeat;
+    background-size: cover;
+
+}
+
+.enlace {
+    font-size: large;
+    color: #fff;
+    transition: all ease-in-out .3s;
+}
+
+.enlace:hover {
+    color: rgb(0, 162, 255);
+    text-decoration: underline;
+}

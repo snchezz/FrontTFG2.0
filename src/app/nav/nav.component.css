@@ -1,0 +1,12 @@
+.yellow {
+    color: gold !important;
+    transition: all ease-in-out .3s;
+}
+
+.yellow:hover {
+    color: rgb(204, 176, 19) !important;
+}
+
+.activoski {
+    color: white !important;
+}

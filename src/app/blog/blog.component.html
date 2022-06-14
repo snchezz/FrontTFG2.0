@@ -1,0 +1,41 @@
+<body>
+
+  <app-nav></app-nav>
+
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <!--Buscar por Titulo-->
+      <input type="text" class="form-control" placeholder="Buscar por título" [(ngModel)]="titulo" />
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)="buscarTitulo()">
+          Buscar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+
+  <div *ngFor="let tutorial of tutoriales">
+    <h2>
+      {{ tutorial.titulo }}
+    </h2>
+    <h2>
+      {{ tutorial.descripcion }}
+    </h2>
+
+    <img src="{{tutorial.imagen}}" alt="">
+    <br>
+  </div>
+
+
+
+  <div id="espacio"></div>
+
+  <br><br>
+
+
+
+  <app-footer></app-footer>
+
+</body>

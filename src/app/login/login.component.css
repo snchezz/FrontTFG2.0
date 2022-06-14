@@ -1,0 +1,35 @@
+#espacio {
+    padding-left: 900px;
+    padding-right: 975px;
+}
+
+body {
+    background: url(https://img.freepik.com/foto-gratis/fondo-acuarela-pintada-mano-forma-cielo-nubes_24972-1095.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#web {
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 2em;
+    position: relative;
+    transition: all .2s ease;
+}
+
+#web:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    opacity: 0;
+    border-bottom: 2px solid;
+    transition: all .5s ease;
+}
+
+#web:hover:after {
+    opacity: 1;
+    left: 0;
+    width: 100%;
+}

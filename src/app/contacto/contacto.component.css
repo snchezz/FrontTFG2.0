@@ -1,0 +1,80 @@
+body {
+    background: url(https://img.freepik.com/foto-gratis/fondo-acuarela-pintada-mano-forma-cielo-nubes_24972-1095.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p {
+    font-size: x-large;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .maps {
+        width: 330px;
+        height: 254px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .maps {
+        width: 450px;
+        height: 336px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .maps {
+        width: 450px;
+        height: 336px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .maps {
+        width: 300px;
+        height: 200px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .maps {
+        width: 600px;
+        height: 450px;
+    }
+}
+
+.web {
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 2em;
+    position: relative;
+    transition: all .2s ease;
+}
+
+.web:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    opacity: 0;
+    border-bottom: 2px solid;
+    transition: all .5s ease;
+}
+
+.web:hover:after {
+    opacity: 1;
+    left: 0;
+    width: 100%;
+}
+
+#espacio {
+padding-left: 320px;
+padding-right: 320px;
+}

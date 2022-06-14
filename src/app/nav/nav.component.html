@@ -1,0 +1,45 @@
+<!--Accesibilidad-->
+<!--NavBar-->
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+  <a routerLink="/home" class="navbar-brand">Erasmus+</a>
+  <ul class="navbar-nav mr-auto" routerLinkActive="active">
+
+
+
+    <li class="nav-item" routerLinkActive="active">
+      <a routerLink="/informacion_rabida" class="nav-link">IES La Rabida</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a routerLink="/informacion_carlomaria" class="nav-link">Carlo Mª Carofa </a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a routerLink="/blog" class="nav-link">Erasmus Blog </a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a routerLink="/contacto" class="nav-link">Contacto </a>
+    </li>
+
+    <li class="nav-item" *ngIf="showAdminBoard">
+      <a class="nav-link yellow" routerLink="/register" routerLinkActive="active">Registrar Alumno</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/entradas" class="nav-link yellow" *ngIf="showAdminBoard" routerLinkActive="active">Administrar Entrada</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/agregar" class="nav-link yellow" *ngIf="showAdminBoard" routerLinkActive="active">Agregar Entrada</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/login" routerLinkActive="active">Iniciar Sesion</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/profile" routerLinkActive="active">{{ username }}</a>
+    </li>
+    <li class="nav-item">
+      <a href class="nav-link" (click)="logout()">Cerrar Sesion</a>
+    </li>
+  </ul>
+</nav>

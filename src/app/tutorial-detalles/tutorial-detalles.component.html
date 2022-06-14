@@ -1,0 +1,87 @@
+<br>
+<div *ngIf="viewMode; else editable">
+  <!--Ver Imagen-->
+  <div *ngIf="tutorialActual.id">
+
+    <!--Ver Titulo-->
+    <div>
+      <label><strong>Titulo:</strong></label> {{ tutorialActual.titulo }}
+    </div>
+
+    <!--Ver Descripcion-->
+    <div>
+      <label><strong>Desarrollo:</strong></label>
+      {{ tutorialActual.descripcion }}
+    </div>
+
+    <label><strong>Imagen:</strong></label>
+    <br>
+    <img src={{tutorialActual.imagen}}>
+    <br>
+    <br>
+
+
+    <!--Cambiar el Estado-->
+    <!--
+      <div>
+        <label><strong>Estado:</strong></label>
+        {{ tutorialActual.publicado ? "Publicado" : "Pendiente" }}
+      </div>
+    -->
+    <a class="badge badge-warning" routerLink="/entradas/{{ tutorialActual.id }}">
+      Editar
+    </a>
+  </div>
+
+  <div *ngIf="!tutorialActual">
+    <br />
+    <p>Por favor seleccione una entrada...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="tutorialActual.id" class="edit-form">
+    <form>
+      <!--Editar Titulo-->
+      <div class="form-group">
+        <label for="titulo">Titulo</label>
+        <input type="text" class="form-control" id="titulo" [(ngModel)]="tutorialActual.titulo" name="tititulotle" />
+      </div>
+      <!--Editar Descripcion-->
+      <div class="form-group">
+        <label for="descripcion">Descripcion</label>
+        <input type="text" class="form-control" id="descripcion" [(ngModel)]="tutorialActual.descripcion"
+          name="descripcion" />
+      </div>
+
+      <!--Ver Imagen-->
+      <label>Imagen</label><br>
+      <input type="text" class="form-control" id="imagen" [(ngModel)]="tutorialActual.imagen" name="imagen" />
+    </form>
+
+    <br>
+
+    <!--Boton de Eliminar-->
+    <button class="badge badge-danger mr-2" (click)="eliminarTutorial()" routerLink="/entradas">
+      Eliminar
+    </button>
+    <!--Boton de Actualizar-->
+    <button type="submit" class="badge badge-success mb-2" (click)="actualizarTutorial()">
+      Actualizar
+    </button>&nbsp;
+    <button class="badge badge-primary mb-2" routerLink="/entradas">
+      Volver
+    </button>&nbsp;
+
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!tutorialActual.id">
+    <br />
+    <p>No se puede acceder a esta entrada...</p>
+  </div>
+
+  <div id="espacio">
+
+  </div>
+</ng-template>

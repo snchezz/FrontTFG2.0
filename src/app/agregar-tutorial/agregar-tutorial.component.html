@@ -1,0 +1,50 @@
+<body>
+
+  <app-nav></app-nav>
+
+  <br><br><br><br><br><br>
+
+  <div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <!--Campo de Titulo-->
+          <label for="title">Título</label>
+          <input type="text" class="form-control" id="titulo" required [(ngModel)]="tutorial.titulo" name="titulo" #titulo="ngModel"/>
+          <div class="alert alert-danger" *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)">
+            Este campo es obligatorio
+          </div>
+        </div>
+        <!--Campo de Descripción-->
+        <div class="form-group">
+          <label for="descriction">Desarrollo</label>
+          <input class="form-control" id="descripcion" required [(ngModel)]="tutorial.descripcion" name="descripcion" #descripcion="ngModel" />
+          <div class="alert alert-danger" *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
+            Este campo es obligatorio
+          </div>
+        </div>
+        <!--Campo de Imagen-->
+        <div class="form-group">
+          <label for="imagen">Imagen (Opcional)</label>
+          <input class="form-control" id="imagen" [(ngModel)]="tutorial.imagen" name="imagen" />
+        </div>
+        <!--Boton dde enviar-->
+        <button (click)="guardarTutorial()" class="btn btn-success">Enviar</button><br><br>
+        <a class="web" routerLink="/tutorial-imgur">¿Como subir imagenes?</a>
+      </div>
+      <!--Tutorial enviado-->
+      <div *ngIf="submitted">
+        <h4>Entrada guardada correctamente!</h4>
+        <!--Agregar nuevo tutorial-->
+        <button class="btn btn-success" (click)="nuevoTutorial()">Agregar otra entrada</button>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div id="espacio"></div>
+
+  <br><br><br><br><br><br>
+
+  <app-footer></app-footer>
+
+</body>

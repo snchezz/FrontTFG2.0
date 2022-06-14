@@ -1,0 +1,39 @@
+<body>
+
+  <app-nav></app-nav>
+  <br><br><br><br><br><br>
+  <div class="container" *ngIf="currentUser; else loggedOut">
+    <header>
+      <h3>
+        Perfil: <strong>{{ currentUser.username }}</strong> 
+      </h3>
+    </header>
+    <br>
+    <!--Nombre de Usuario-->
+    <p>
+      <strong>Usuario:</strong>
+      {{currentUser.username}}
+    </p>
+    <!--Correo-->
+    <p>
+      <strong>Email:</strong>
+      {{ currentUser.email }}
+    </p>
+    <!--Rol-->
+    <strong>Roles:</strong>
+    <ul>
+      <li *ngFor="let role of currentUser.roles">
+        {{ role }}
+      </li>
+    </ul>
+  </div>
+  <br><br><br><br><br>
+  <app-footer></app-footer>
+  <div id="espacio">
+
+  </div>
+  <ng-template #loggedOut>
+    Inicia sesión para acceder aquí.
+  </ng-template>
+
+</body>
